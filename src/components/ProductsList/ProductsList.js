@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import TopBar from "./TopBar";
 import { Link } from "react-router-dom";
+import "./ProductsList.css";
 
 function ProductsList() {
   let [products, setProducts] = useState([]);
@@ -29,22 +29,26 @@ function ProductsList() {
 
   return (
     <React.Fragment>
-      <div className="d-flex flex-column">
-        <TopBar />
-        <h2>Estos son los Productos en la Base de Datos</h2>
-        <ul>
+      
+      <div className="principal">
+    <h1 className="h1">Estos son los productos disponibles</h1>
+        <ul className="list">
           {products.length === 0 && <p>Cargando...</p>}
           {products.map((product, i) => {
             return (
-              <li key={i}>
+              <li className="elements" key={i}>
                 <Link to={`/ProductsList/${product.id}`}>
-                  <h3>{product.name}</h3>
-                  <img
+                  <div>
+                    
+                  </div>
+                  <h2 className="title">{product.name}</h2>
+                  <img className="img"
                     src={product.images_products[0]}
                     alt="avatar"
                     width="150"
                   />
-                  <p>
+                 <div className="content">
+                 <p>
                     Para {product.gender}
                     <br /> Marca : {product.brand.name}
                     <br />
@@ -52,12 +56,15 @@ function ProductsList() {
                   </p>
 
                   <p>{product.description}</p>
+                 </div>
                 </Link>
               </li>
             );
           })}
         </ul>
       </div>
+      
+      
     </React.Fragment>
   );
 }

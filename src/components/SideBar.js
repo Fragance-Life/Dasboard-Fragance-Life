@@ -1,12 +1,12 @@
 import React from "react";
 import image from "../assets/images/logoFraganceLife.png";
 import ContentWrapper from "./ContentWrapper";
-import LastFraganceInDb from "./LastFraganceInDb";
+import LastFraganceInDb from "./LastFraganceInDb/LastFraganceInDb";
 import GenresInDb from "./GenresInDb/GenresInDb";
-import ProductsList from "./ProductsList";
+import ProductsList from "./ProductsList/ProductsList";
 import UsersList from "./UsersList/UsersList";
 import ContentRowMovies from "./ContentRowMovies";
-import ProductDetail from "./ProductDetail";
+import ProductDetail from "./ProductDetail/ProductDetail";
 import Chart from "./Chart";
 import Error from "./Error";
 import { Link, Routes, Route } from "react-router-dom";
@@ -53,6 +53,12 @@ function SideBar(props) {
 
         {/*<!-- Nav Item - Pages -->*/}
         <li className="nav-item">
+          <Link className="nav-link collapsed" to="/ProductsList">
+            <i className="fas fa-fw fa-folder"></i>
+            <span>Productos</span>
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link collapsed" to="/LastFraganceInDb">
             <i className="fas fa-fw fa-folder"></i>
             <span>Last FraganceInDb</span>
@@ -64,13 +70,6 @@ function SideBar(props) {
             <span>Marcas</span>
           </Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link collapsed" to="/ProductsList">
-            <i className="fas fa-fw fa-folder"></i>
-            <span>Productos</span>
-          </Link>
-        </li>
-
         <li className="nav-item">
           <Link className="nav-link collapsed" to="/UsuariosList">
             <i className="fas fa-fw fa-folder"></i>

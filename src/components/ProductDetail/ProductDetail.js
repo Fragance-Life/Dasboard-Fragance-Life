@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import TopBar from "./TopBar";
 import { useParams } from "react-router-dom";
-
+import "./ProductDetail.css"
 function ProductDetail(props) {
   let [products, setProducts] = useState([]);
   let { id } = useParams();
@@ -30,8 +29,7 @@ function ProductDetail(props) {
 
   //let id = Number(props.id)
   return (
-    <div>
-      <TopBar />
+    <div className="content">  
       <div className="col-lg-6 mb-4">
         {products.name === undefined || products.name === "" ? (
           <p>Cargando...</p>

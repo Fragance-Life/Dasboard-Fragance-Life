@@ -37,8 +37,10 @@ function UsersList() {
               </div>
               
               <div className="date">
-                <p>{user.name} {user.surname}</p>
-                <p>{user.email}</p>
+                <p>{user.name} {user.surname} <br/>
+                   {user.email}
+                </p>
+               
               </div>
               
             </li>
